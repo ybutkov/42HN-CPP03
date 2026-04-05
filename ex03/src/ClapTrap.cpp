@@ -6,17 +6,20 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 19:31:41 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/05 16:46:32 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/05 19:21:12 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "ClapTrap.hpp"
 #include <iostream>
 #include <string_view>
 
-ClapTrap::ClapTrap(void): ClapTrap("No_name") {}
 
-ClapTrap::ClapTrap(std::string name): ClapTrap(name, 10, 10, 0) {}
+ClapTrap::ClapTrap(void): ClapTrap("No_name_ClapTrap") {}
+
+ClapTrap::ClapTrap(std::string name): 
+	ClapTrap(name, DEFAULT_HIT_POINTS, DEFAULT_ENERGY, DEFAULT_ATTACK_DAMAGE) {}
 
 ClapTrap::ClapTrap(std::string name, unsigned int hp, unsigned int energy,
 	unsigned int dmg): name(name), hitPoints(hp), energy(energy), attackDamage(dmg)
@@ -110,3 +113,22 @@ void ClapTrap::beRepaired(unsigned int amount)
 			<< hitPoints << " points." << std::endl;
 }
 
+void ClapTrap::setName(std::string name)
+{
+	this->name = name;
+}
+
+void ClapTrap::showState(void) const
+{
+	std::cout << getClassName() << " state — name: " << name
+			  << ", hitPoints: " << hitPoints
+			  << ", energy: " << energy
+			  << ", attackDamage: " << attackDamage
+			  << std::endl;
+}
+
+
+std::string ClapTrap::getClassName() const
+{
+	return "ClapTrap";
+}

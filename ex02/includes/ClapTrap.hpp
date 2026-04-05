@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 19:36:27 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/05 16:22:16 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/05 18:22:53 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class ClapTrap
 {
+  protected:
 	std::string name;
 	unsigned int hitPoints;
 	unsigned int energy;
@@ -25,7 +26,7 @@ class ClapTrap
 	bool isOperational() const;
 
   public:
-	ClapTrap();
+  	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(std::string name, unsigned int hitPoints,
 		unsigned int energy, unsigned int attackDamage);
@@ -35,6 +36,9 @@ class ClapTrap
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
+	void setName(std::string name);
+	virtual std::string getClassName() const;
+	void showState(void) const;
 };
 
 #endif
