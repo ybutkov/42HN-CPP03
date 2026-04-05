@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 20:55:36 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/05 20:38:24 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/05 21:17:44 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ class DiamondTrap: public ScavTrap, public FragTrap
 {
     std::string name;
 public:
+    static constexpr unsigned int DEFAULT_HIT_POINTS = FragTrap::DEFAULT_HIT_POINTS;
+    static constexpr unsigned int DEFAULT_ENERGY = ScavTrap::DEFAULT_ENERGY;
+    static constexpr unsigned int DEFAULT_ATTACK_DAMAGE = FragTrap::DEFAULT_ATTACK_DAMAGE;
+    
     DiamondTrap(void);
     DiamondTrap(std::string name);
     DiamondTrap(const DiamondTrap& other);
@@ -31,10 +35,6 @@ public:
     void whoAmI() const;
     std::string getClassName() const override;
     void showState(void) const override;
-
-    static constexpr unsigned int DEFAULT_HIT_POINTS = FragTrap::DEFAULT_HIT_POINTS;
-    static constexpr unsigned int DEFAULT_ENERGY = ScavTrap::DEFAULT_ENERGY;
-    static constexpr unsigned int DEFAULT_ATTACK_DAMAGE = FragTrap::DEFAULT_ATTACK_DAMAGE;
 };
 
 #endif

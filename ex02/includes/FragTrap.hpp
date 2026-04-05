@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 19:49:15 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/05 18:23:01 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/05 20:58:21 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 class FragTrap: public ClapTrap
 {
 public:
+    static constexpr unsigned int DEFAULT_HIT_POINTS = 100;
+    static constexpr unsigned int DEFAULT_ENERGY = 100;
+    static constexpr unsigned int DEFAULT_ATTACK_DAMAGE = 30;
+    
     FragTrap(void);
     FragTrap(std::string name);
     FragTrap(std::string name, unsigned int hitPoints,

@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 19:31:41 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/05 18:24:57 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/05 20:57:40 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 ClapTrap::ClapTrap(void): ClapTrap("No_name_ClapTrap") {}
 
-ClapTrap::ClapTrap(std::string name): ClapTrap(name, 10, 10, 0) {}
+ClapTrap::ClapTrap(std::string name): 
+	ClapTrap(name, DEFAULT_HIT_POINTS, DEFAULT_ENERGY, DEFAULT_ATTACK_DAMAGE) {}
 
 ClapTrap::ClapTrap(std::string name, unsigned int hp, unsigned int energy,
 	unsigned int dmg): name(name), hitPoints(hp), energy(energy), attackDamage(dmg)

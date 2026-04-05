@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 20:11:49 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/05 18:23:16 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/05 21:01:05 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 FragTrap::FragTrap(void): FragTrap("No_name_FragTrap") {}
 
-FragTrap::FragTrap(std::string name): FragTrap(name, 100, 100, 30) {}
+FragTrap::FragTrap(std::string name): 
+    FragTrap(name, DEFAULT_HIT_POINTS, DEFAULT_ENERGY, DEFAULT_ATTACK_DAMAGE) {}
 
 FragTrap::FragTrap(std::string name, unsigned int hitPoints,
 		unsigned int energy, unsigned int attackDamage): 
