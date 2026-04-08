@@ -6,7 +6,7 @@
 /*   By: ybutkov <ybutkov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/04 22:01:12 by ybutkov           #+#    #+#             */
-/*   Updated: 2026/04/05 21:17:46 by ybutkov          ###   ########.fr       */
+/*   Updated: 2026/04/08 20:46:19 by ybutkov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 DiamondTrap::DiamondTrap(void): DiamondTrap("No_name_DiamondTrap") {}
 
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap(std::string name):
+    ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name), name(name)
 {
-    this->name = name;
     this->hitPoints = DEFAULT_HIT_POINTS;
     this->energy = DEFAULT_ENERGY;
     this->attackDamage = DEFAULT_ATTACK_DAMAGE;
@@ -31,9 +31,9 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), ScavT
 
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& other): ClapTrap(other), ScavTrap(other), FragTrap(other)
+DiamondTrap::DiamondTrap(const DiamondTrap& other): 
+    ClapTrap(other), ScavTrap(other), FragTrap(other), name(other.name)
 {
-    this->name = other.name;
     std::cout << "Copy constructor copies DiamondTrap from "
 		<< other.name << std::endl;
 }
